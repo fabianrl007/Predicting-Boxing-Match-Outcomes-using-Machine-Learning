@@ -54,3 +54,12 @@ For the minority 'Win B' class (target 0), the XGBoost model demonstrated the st
 While the precision for 'Win B' remained modest, the significant recall and the overall highest AUC indicated that XGBoost provided the best discriminative power and ability to identify the minority class outcomes in this iteration. The confusion matrix below details its performance on the test set.
 
 ![Confusion Matrix for XGBoost Model](images/ConfusionMatrix.png)
+
+### Feature Importances (XGBoost)
+
+To understand which factors most influenced the predictions of the best-performing model (XGBoost), feature importances were analyzed. The plot below shows the relative importance of each feature used in the model.
+
+![XGBoost Feature Importances](images/xgboost_feature_importance.png)  
+
+
+The analysis revealed that pre-fight statistics related to the opponent (Fighter B), specifically their number of wins (`won_B`) and age (`age_B`), were the two most influential features by a noticeable margin. The difference in age between the fighters (`age_diff`) also ranked highly, followed by Fighter A's draw record (`drawn_A`) and the difference in knockouts (`ko_diff`). This indicates the model heavily weighs the opponent's past success and age, along with the age disparity between competitors, when predicting fight outcomes based on this dataset.
