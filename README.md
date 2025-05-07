@@ -53,4 +53,4 @@ For the minority 'Win B' class (target 0), the XGBoost model demonstrated the st
 
 While the precision for 'Win B' remained modest, the significant recall and the overall highest AUC indicated that XGBoost provided the best discriminative power and ability to identify the minority class outcomes in this iteration. The confusion matrix below details its performance on the test set.
 
-*PASTE MARKDOWN FOR XGBOOST CONFUSION MATRIX PLOT HERE*
+![Confusion Matrix for XGBoost Model](images/ConfusionMatrix.png)
