@@ -77,4 +77,4 @@ Feature importance analysis from the XGBoost model highlighted that the opponent
 ## Code
 
 The full analysis code and detailed steps can be found in the Jupyter Notebook file in this repository:
-[`Boxing-Prediction-Project.ipynb`](Boxing-Prediction-Project.ipynb)
+[`Boxing_Prediction_Project.ipynb`](Boxing_Prediction_Project.ipynb)
