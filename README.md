@@ -6,7 +6,7 @@ Following an initial exploratory data analysis (Project 1), this project focuses
 
 ## Data Source & Tools
 
-* **Data Source:** This project utilized the "Boxing Matches" dataset sourced from Kaggle ([https://www.kaggle.com/datasets/mexwell/boxing-matches](https://www.kaggle.com/datasets/mexwell/boxing-matches)), the same dataset explored in Project 1, containing historical data on approximately 387,000 professional boxing bouts prior to cleaning for this task.
+* **Data Source:** This project utilized the "Boxing Matches" dataset sourced from Kaggle ([https://www.kaggle.com/datasets/mexwell/boxing-matches](https://www.kaggle.com/datasets/mexwell/boxing-matches)), the same dataset explored in Project 1, containing historical data on approximately 387,000 professional boxing bouts before cleaning for this task.
 * **Tools Used:**
     * Python
     * Pandas (for data loading, manipulation, and cleaning)
@@ -63,3 +63,13 @@ To understand which factors most influenced the predictions of the best-performi
 
 
 The analysis revealed that pre-fight statistics related to the opponent (Fighter B), specifically their number of wins (`won_B`) and age (`age_B`), were the two most influential features by a noticeable margin. The difference in age between the fighters (`age_diff`) also ranked highly, followed by Fighter A's draw record (`drawn_A`) and the difference in knockouts (`ko_diff`). This indicates the model heavily weighs the opponent's past success and age, along with the age disparity between competitors, when predicting fight outcomes based on this dataset.
+
+## Limitations
+
+Several limitations should be considered for this predictive modeling project. The dataset exhibited a significant class imbalance (approximately 89% 'Win A' vs. 11% 'Win B'), which, while addressed with techniques like `scale_pos_weight` in XGBoost and `class_weight='balanced'` in other models, still makes achieving high precision and recall for the minority class ('Win B') challenging. The features selected, primarily based on age and historical fight records, may not capture the full complexity of boxing dynamics, such as specific fighter styles, recent training camp quality, or in-fight adaptability. Furthermore, the absence of geographical data (confirmed missing) and other potentially rich features like detailed punch statistics or betting odds limits the potential predictive power of the models. The methods used for handling missing values (outlier capping and median imputation for age/KOs) are standard but introduce some level of approximation.
+
+## Conclusion
+
+This project successfully demonstrated an end-to-end machine learning workflow to predict professional boxing match outcomes from a large, imbalanced dataset. After thorough data preparation, feature engineering, and an iterative modeling process comparing Logistic Regression, Random Forest, and XGBoost, a balanced XGBoost classifier emerged as the best-performing model. It achieved an AUC score of approximately 0.748, showcasing a fair ability to distinguish between winners and losers, and notably improved the recall for the minority 'Win B' class to around 67% (F1-score ~0.33).
+
+Feature importance analysis from the XGBoost model highlighted that the opponent's pre-fight win record (`won_B`), opponent's age (`age_B`), and the age difference between fighters (`age_diff`) were among the most influential predictors. While predicting sports outcomes is inherently difficult due to numerous unquantifiable variables, this project provides a solid baseline and highlights the importance of addressing class imbalance. Potential future work could involve incorporating more diverse features (if available), more extensive hyperparameter tuning, or exploring advanced ensemble techniques to refine predictive accuracy further.
