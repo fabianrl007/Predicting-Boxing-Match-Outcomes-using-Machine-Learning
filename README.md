@@ -73,3 +73,8 @@ Several limitations should be considered for this predictive modeling project. T
 This project successfully demonstrated an end-to-end machine learning workflow to predict professional boxing match outcomes from a large, imbalanced dataset. After thorough data preparation, feature engineering, and an iterative modeling process comparing Logistic Regression, Random Forest, and XGBoost, a balanced XGBoost classifier emerged as the best-performing model. It achieved an AUC score of approximately 0.748, showcasing a fair ability to distinguish between winners and losers, and notably improved the recall for the minority 'Win B' class to around 67% (F1-score ~0.33).
 
 Feature importance analysis from the XGBoost model highlighted that the opponent's pre-fight win record (`won_B`), opponent's age (`age_B`), and the age difference between fighters (`age_diff`) were among the most influential predictors. While predicting sports outcomes is inherently difficult due to numerous unquantifiable variables, this project provides a solid baseline and highlights the importance of addressing class imbalance. Potential future work could involve incorporating more diverse features (if available), more extensive hyperparameter tuning, or exploring advanced ensemble techniques to refine predictive accuracy further.
+
+## Code
+
+The full analysis code and detailed steps can be found in the Jupyter Notebook file in this repository:
+[`Boxing-Prediction-Project.ipynb`](Boxing-Prediction-Project.ipynb)
